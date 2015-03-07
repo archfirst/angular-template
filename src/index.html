@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html data-ng-app="app" ng-strict-di>
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide { display: none!important; }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <base href="/">
+
+    <title>Angular Template</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/app.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div ng-controller="AppController as vm">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref="dashboard">My App</a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="vm.isActive(r)"
+                            ng-repeat="r in vm.navRoutes">
+                            <a ui-sref="{{r.name}}"
+                               ng-bind="r.title"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="content" class="content">
+            <div ui-view></div>
+        </section>
+    </div>
+
+    <!-- jquery.js must be included BEFORE angular.js, otherwise angular can't use it -->
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js-->
+
+    <!-- inject:js -->
+    <script src="/src/app.module.js"></script>
+    <script src="/src/core/core.module.js"></script>
+    <script src="/src/dashboard/dashboard.module.js"></script>
+    <script src="/src/framework/exception/exception.module.js"></script>
+    <script src="/src/framework/logger/logger.module.js"></script>
+    <script src="/src/framework/router/router.module.js"></script>
+    <script src="/src/app.controller.js"></script>
+    <script src="/src/core/core.config.js"></script>
+    <script src="/src/core/core.constants.js"></script>
+    <script src="/src/dashboard/dashboard.controller.js"></script>
+    <script src="/src/dashboard/dashboard.route.js"></script>
+    <script src="/src/framework/exception/exception-handler.provider.js"></script>
+    <script src="/src/framework/exception/exception.js"></script>
+    <script src="/src/framework/logger/logger.js"></script>
+    <script src="/src/framework/router/router-helper.provider.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+
+    <!-- endbuild -->
+</body>
+</html>
