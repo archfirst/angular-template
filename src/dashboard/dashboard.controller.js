@@ -9,7 +9,6 @@
 
     /* @ngInject */
     function DashboardController(logger) {
-        var vm = this;
 
         activate();
 
