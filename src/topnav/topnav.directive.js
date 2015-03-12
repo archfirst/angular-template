@@ -1,14 +1,30 @@
-(function() {
+(function () {
     'use strict';
 
     angular
-        .module('app')
-        .controller('AppController', AppController);
+        .module('app.topnav')
+        .directive('atTopnav', topnavDirective);
 
-    AppController.$inject = ['$state', 'routerHelper'];
+    topnavDirective.$inject = [];
 
     /* @ngInject */
-    function AppController($state, routerHelper) {
+    function topnavDirective() {
+
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'topnav/topnav.html',
+            controllerAs: 'vm',
+            bindToController: true,
+            controller: TopnavController
+        };
+
+        return directive;
+    }
+
+    TopnavController.$inject = ['$state', 'routerHelper'];
+
+    /* @ngInject */
+    function TopnavController($state, routerHelper) {
         var vm = this;
         var states = routerHelper.getStates();
 
@@ -39,4 +55,5 @@
             return $state.current.title.substr(0, menuName.length) === menuName ? 'active' : '';
         }
     }
+
 })();
