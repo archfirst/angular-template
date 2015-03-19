@@ -12,7 +12,7 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'topnav/topnav.html',
+            templateUrl: 'components/topnav/topnav.html',
             controllerAs: 'vm',
             bindToController: true,
             controller: TopnavController
