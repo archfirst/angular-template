@@ -8,11 +8,12 @@
             return {
                 restrict: 'E',
                 templateUrl: 'components/dashboard/dashboard.html',
-                controller: DashboardController,
+                controller: 'DashboardController',
                 controllerAs: 'vm',
                 bindToController: true
             };
-        });
+        })
+        .controller('DashboardController', DashboardController);
 
 
     DashboardController.$inject = ['logger'];
