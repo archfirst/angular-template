@@ -18,9 +18,7 @@
                 state: 'dashboard',
                 config: {
                     url: '/',
-                    templateUrl: 'components/dashboard/dashboard.html',
-                    controller: 'DashboardController',
-                    controllerAs: 'vm',
+                    template: '<dashboard></dashboard>',
                     title: 'Dashboard',
                     settings: {
                         nav: 1  // position in navbar

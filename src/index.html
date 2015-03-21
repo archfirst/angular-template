@@ -4,7 +4,9 @@
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
-        .ng-hide { display: none!important; }
+        .ng-hide {
+            display: none !important;
+        }
     </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,9 +31,7 @@
 </head>
 
 <body>
-    <!-- body primarily consists of a topnav and a content area -->
-    <at-topnav></at-topnav>
-    <div ui-view class="content"></div>
+    <app></app>
 
     <!-- jquery.js must be included BEFORE angular.js, otherwise angular can't use it -->
 
@@ -62,7 +62,8 @@
     <script src="/src/framework/exception/exception.js"></script>
     <script src="/src/framework/logger/logger.js"></script>
     <script src="/src/framework/router/router-helper.provider.js"></script>
-    <script src="/src/components/dashboard/dashboard.controller.js"></script>
+    <script src="/src/components/app/app.directive.js"></script>
+    <script src="/src/components/dashboard/dashboard.directive.js"></script>
     <script src="/src/components/dashboard/dashboard.route.js"></script>
     <script src="/src/components/topnav/topnav.directive.js"></script>
     <!-- endinject -->
