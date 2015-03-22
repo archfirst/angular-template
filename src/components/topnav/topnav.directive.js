@@ -5,6 +5,8 @@
         .module('app.topnav')
         .directive('atTopnav', topnavDirective);
 
+
+    // ----- topnavDirective -----
     topnavDirective.$inject = [];
 
     /* @ngInject */

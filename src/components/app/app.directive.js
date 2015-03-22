@@ -3,11 +3,18 @@
     'use strict';
 
     angular.module('app.core')
-        .directive('app', function () {
+        .directive('app', appDirective);
 
-            return {
-                restrict: 'E',
-                templateUrl: 'components/app/app.html'
-            };
-        });
+
+    // ----- appDirective -----
+    function appDirective() {
+
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'components/app/app.html'
+        };
+
+        return directive;
+    }
+
 })();

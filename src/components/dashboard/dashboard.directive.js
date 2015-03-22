@@ -3,19 +3,29 @@
     'use strict';
 
     angular.module('app.dashboard')
-        .directive('dashboard', function () {
-
-            return {
-                restrict: 'E',
-                templateUrl: 'components/dashboard/dashboard.html',
-                controller: 'DashboardController',
-                controllerAs: 'vm',
-                bindToController: true
-            };
-        })
+        .directive('dashboard', dashboardDirective)
         .controller('DashboardController', DashboardController);
 
 
+    // ----- dashboardDirective -----
+    dashboardDirective.$inject = [];
+
+    /* @ngInject */
+    function dashboardDirective() {
+
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'components/dashboard/dashboard.html',
+            controller: 'DashboardController',
+            controllerAs: 'vm',
+            bindToController: true
+        };
+
+        return directive;
+    }
+
+
+    // ----- DashboardController -----
     DashboardController.$inject = ['logger'];
 
     /* @ngInject */
