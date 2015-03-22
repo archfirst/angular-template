@@ -76,9 +76,9 @@ Below this level you will find various folders that arrange the application's fu
 
 - `framework:` Container for reusable services such as logging, exception handling, routing, security, local storage etc. These services are expected to work out-of-the-box without any changes for most applications. The template provides sample implementations for the first three. (This folder is called `blocks` in the gulp-patterns project.)
 
-- `core:` contains functionality that is shared across the application and will probably need customization for a specific application. This includes directives, filters and services and styles common to the entire application.
+- `core:` Contains functionality that is shared across the application and will probably need customization for a specific application. This includes directives, filters and services and styles common to the entire application.
 
-- `components:`: A folder that contains all the components of the application. We recommend thinking of an Angular application as a tree of components, starting with the `app` component as the root of the tree.
+- `components:` Contains all the components of the application. We recommend thinking of an Angular application as a tree of components, starting with the `app` component as the root of this tree.
 
 - `images:` Images used in the application.
 
