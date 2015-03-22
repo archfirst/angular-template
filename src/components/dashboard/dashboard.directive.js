@@ -17,8 +17,7 @@
             restrict: 'E',
             templateUrl: 'components/dashboard/dashboard.html',
             controller: 'DashboardController',
-            controllerAs: 'vm',
-            bindToController: true
+            controllerAs: 'vm'
         };
 
         return directive;
