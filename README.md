@@ -57,11 +57,10 @@ The folder structure is somewhat simplified and flatter compared to John Papa's 
 
 ```
 /src
+    /components
     /core
-    /dashboard
     /framework
     /images
-    /app.controller.js
     /app.module.js
     /app.scss
     /index.html
@@ -72,7 +71,6 @@ The `src` folder contains only the source for the AngularJS client application. 
 - `index.html`
 - `app.scss`
 - `app.module.js`
-- `app.controller.js`
 
 Below this level you will find various folders that arrange the application's functionality into logical modules.
 
@@ -80,7 +78,7 @@ Below this level you will find various folders that arrange the application's fu
 
 - `core:` contains functionality that is shared across the application and will probably need customization for a specific application. This includes directives, filters and services and styles common to the entire application.
 
-- `dashboard:`: A feature folder that implements a very simple page.
+- `components:`: A folder that contains all the components of the application. We recommend thinking of an Angular application as a tree of components, starting with the `app` component as the root of the tree.
 
 - `images:` Images used in the application.
 
