@@ -2,8 +2,7 @@
 
 'use strict';
 
-module.exports = function(config) {
-    var gulpConfig = require('./gulp.config')();
+module.exports = function (config) {
 
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -11,13 +10,20 @@ module.exports = function(config) {
 
         // frameworks to use
         // some available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'chai', 'sinon', 'chai-sinon'],
+        frameworks: [ 'mocha', 'chai', 'sinon', 'chai-sinon' ],
 
         // list of files / patterns to load in the browser
-        files: gulpConfig.karma.files,
+        files: [].concat(
+            require('wiredep')({ devDependencies: true }).js,
+            'test/helpers/*.js',
+            'src/**/*.module.js',
+            'src/**/*.js',
+            '.tmp/templates.js',
+            'test/**/*.spec.js'
+        ),
 
         // list of files to exclude
-        exclude: gulpConfig.karma.exclude,
+        exclude: [],
 
         proxies: {
             '/': 'http://localhost:8888/'
@@ -25,16 +31,32 @@ module.exports = function(config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: gulpConfig.karma.preprocessors,
+        preprocessors: {
+            'src/**/*.js': [ 'coverage' ]
+        },
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'coverage'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: [ 'progress', 'coverage' ],
 
         coverageReporter: {
-            dir: gulpConfig.karma.coverage.dir,
-            reporters: gulpConfig.karma.coverage.reporters
+            dir: 'report/coverage',
+            reporters: [
+                // reporters not supporting the `file` property
+                { type: 'html', subdir: 'report-html' },
+                { type: 'lcov', subdir: 'report-lcov' },
+
+                // reporters supporting the `file` property, use `subdir` to directly
+                // output them in the `dir` directory.
+                // omit `file` to output to the console.
+                // {type: 'cobertura', subdir: '.', file: 'cobertura.txt'},
+                // {type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt'},
+                // {type: 'teamcity', subdir: '.', file: 'teamcity.txt'},
+                // {type: 'text'}, subdir: '.', file: 'text.txt'},
+
+                { type: 'text-summary' } //, subdir: '.', file: 'text-summary.txt'}
+            ]
         },
 
         // web server port
@@ -54,7 +76,7 @@ module.exports = function(config) {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         //        browsers: ['Chrome', 'ChromeCanary', 'FirefoxAurora', 'Safari', 'PhantomJS'],
-        browsers: ['PhantomJS'],
+        browsers: [ 'PhantomJS' ],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
