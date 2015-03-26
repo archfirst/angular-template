@@ -15,7 +15,7 @@
  */
 
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')({ lazy: true }),
+    $ = require('gulp-load-plugins')({lazy: true}),
     src = './src/',
     config = {
 
@@ -40,6 +40,7 @@ var gulp = require('gulp'),
             src + '**/*.js'
         ],
         html: src + '**/*.html',
+        sass: src + '**/*.scss',
         $: $,
         args: require('yargs').argv,
 
@@ -48,7 +49,7 @@ var gulp = require('gulp'),
             if (typeof(msg) === 'object') {
                 for (var item in msg) {
                     if (msg.hasOwnProperty(item)) {
-                        $.util.log($.util.colors.blue(msg[ item ]));
+                        $.util.log($.util.colors.blue(msg[item]));
                     }
                 }
             } else {
@@ -80,6 +81,6 @@ var gulp = require('gulp'),
     });
 
 
-gulp.task('default', [ 'help' ]);
+gulp.task('default', ['help']);
 
 module.exports = gulp;
