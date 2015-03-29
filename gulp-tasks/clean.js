@@ -22,7 +22,7 @@ module.exports = function (config) {
     gulp.task('clean-code', function (done) {
         var files = [].concat(
             config.tempDir + '**/*.js',
-            config.buildDir + 'js/**/*.js',
+            config.buildDir + '**/*.js',
             config.buildDir + '**/*.html'
         );
 
@@ -32,7 +32,7 @@ module.exports = function (config) {
     gulp.task('clean-styles', function (done) {
         var files = [].concat(
             config.tempDir + '**/*.css',
-            config.buildDir + 'styles/**/*.css'
+            config.buildDir + '**/*.css'
         );
 
         clean(files, done);

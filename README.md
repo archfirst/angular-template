@@ -164,14 +164,6 @@ Below this level you will find various folders that arrange the application's fu
 
     Compile less files to CSS, add vendor prefixes, and copy to the build folder
 
-### Bower Files
-
-- `gulp wiredep`
-
-    Looks up all bower components' main files and JavaScript source code, then adds them to the `index.html`.
-
-    The `.bowerrc` file also runs this as a postinstall task whenever `bower install` is run.
-
 ### Angular HTML Templates
 
 - `gulp templatecache`

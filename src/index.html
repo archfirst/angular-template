@@ -19,53 +19,33 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 
     <!-- build:css styles/lib.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/app.css-->
+
     <!-- inject:css -->
-    <link rel="stylesheet" href="/.tmp/app.css">
     <!-- endinject -->
+
     <!-- endbuild -->
 </head>
 
 <body>
-    <app></app>
+    <tmpl-app></tmpl-app>
 
     <!-- jquery.js must be included BEFORE angular.js, otherwise angular can't use it -->
 
     <!-- build:js js/lib.js -->
-    <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
     <script src="/bower_components/lodash/lodash.js"></script>
-    <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js js/app.js-->
+    <!-- build:js js/app.js -->
 
     <!-- inject:js -->
-    <script src="/src/app.module.js"></script>
-    <script src="/src/core/core.module.js"></script>
-    <script src="/src/framework/exception/exception.module.js"></script>
-    <script src="/src/framework/logger/logger.module.js"></script>
-    <script src="/src/framework/router/router.module.js"></script>
-    <script src="/src/components/dashboard/dashboard.module.js"></script>
-    <script src="/src/components/topnav/topnav.module.js"></script>
-    <script src="/src/core/core.config.js"></script>
-    <script src="/src/core/core.constants.js"></script>
-    <script src="/src/framework/exception/exception-handler.provider.js"></script>
-    <script src="/src/framework/exception/exception.js"></script>
-    <script src="/src/framework/logger/logger.js"></script>
-    <script src="/src/framework/router/router-helper.provider.js"></script>
-    <script src="/src/components/app/app.directive.js"></script>
-    <script src="/src/components/dashboard/dashboard.directive.js"></script>
-    <script src="/src/components/dashboard/dashboard.route.js"></script>
-    <script src="/src/components/topnav/topnav.directive.js"></script>
     <!-- endinject -->
 
     <!-- inject:templates:js -->

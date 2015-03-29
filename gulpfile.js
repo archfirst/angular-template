@@ -17,51 +17,10 @@
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({lazy: true}),
     src = './src/',
-    config = {
-
-        // --- Configurables ---
-        sourceDir: src,
-        testDir: './test/',
-        buildDir: './build/',
-        tempDir: './.tmp/',
-        proxyPort: 7203,
-        port: 3000,
-        browserReloadDelay: 1000,
-        js: [
-            // module files in desired order
-            src + 'app.module.js',
-            src + 'core/core.module.js',
-            src + 'framework/**/*.module.js',
-            src + '**/*.module.js',
-
-            // remaining files in desired order
-            src + 'core/**/*.js',
-            src + 'framework/**/*.js',
-            src + '**/*.js'
-        ],
-        html: src + '**/*.html',
-        sass: src + '**/*.scss',
-        $: $,
-        args: require('yargs').argv,
-
-        // --- Utilities ---
-        log: function log(msg) {
-            if (typeof(msg) === 'object') {
-                for (var item in msg) {
-                    if (msg.hasOwnProperty(item)) {
-                        $.util.log($.util.colors.blue(msg[item]));
-                    }
-                }
-            } else {
-                $.util.log($.util.colors.blue(msg));
-            }
-        },
-        notify: function notify(options) {
-            var notifier = require('node-notifier');
-            notifier.notify(options);
-        }
-
-    };
+    config = require('./gulp.config'),
+    buildTask = (function (config, taskFile) {
+        require('./gulp-tasks/' + taskFile)(config);
+    }).bind(null, config);
 
 [
     'help',
@@ -76,9 +35,7 @@ var gulp = require('gulp'),
     'optimize',
     'test',
     'bump'
-].forEach(function (file) {
-        require('./gulp-tasks/' + file)(config);
-    });
+].forEach(buildTask);
 
 
 gulp.task('default', ['help']);

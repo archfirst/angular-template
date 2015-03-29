@@ -9,7 +9,7 @@
 
     /* @ngInject */
     function appRun(routerHelper) {
-        routerHelper.configureStates(getStates(), '/');
+        routerHelper.configureStates(getStates());
     }
 
     function getStates() {
@@ -18,7 +18,7 @@
                 state: 'dashboard',
                 config: {
                     url: '/',
-                    template: '<dashboard></dashboard>',
+                    template: '<tmpl-dashboard></tmpl-dashboard>',
                     title: 'Dashboard',
                     settings: {
                         nav: 1  // position in navbar

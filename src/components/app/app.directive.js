@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('app.core')
-        .directive('app', appDirective);
+        .directive('tmplApp', appDirective);
 
 
     // ----- appDirective -----

@@ -5,81 +5,91 @@
 module.exports = function (config) {
 
     config.set({
-        // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: './',
+            // base path that will be used to resolve all patterns (eg. files, exclude)
+            basePath: './',
 
-        // frameworks to use
-        // some available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: [ 'mocha', 'chai', 'sinon', 'chai-sinon' ],
+            // frameworks to use
+            // some available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+            frameworks: ['mocha', 'chai', 'sinon', 'chai-sinon'],
 
-        // list of files / patterns to load in the browser
-        files: [].concat(
-            require('wiredep')({ devDependencies: true }).js,
-            'test/helpers/*.js',
-            'src/**/*.module.js',
-            'src/**/*.js',
-            '.tmp/templates.js',
-            'test/**/*.spec.js'
-        ),
+            // list of files / patterns to load in the browser
+            files: [
+                'bower_components/jquery/dist/jquery.js',
+                'bower_components/angular/angular.js',
+                'bower_components/angular-sanitize/angular-sanitize.js',
+                'bower_components/angular-ui-router/release/angular-ui-router.js',
+                'bower_components/angular-mocks/angular-mocks.js',
+                'bower_components/bardjs/dist/bard.js',
+                'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+                'bower_components/d3/d3.js',
+                'bower_components/lodash/lodash.js',
 
-        // list of files to exclude
-        exclude: [],
+                'test/helpers/*.js',
+                'src/**/*.module.js',
+                'src/**/*.js',
+                '.tmp/templates.js',
+                'test/**/*.spec.js'
+            ],
 
-        proxies: {
-            '/': 'http://localhost:8888/'
-        },
+            // list of files to exclude
+            exclude: [],
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {
-            'src/**/*.js': [ 'coverage' ]
-        },
+            proxies: {
+                '/': 'http://localhost:8888/'
+            },
 
-        // test results reporter to use
-        // possible values: 'dots', 'progress', 'coverage'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: [ 'progress', 'coverage' ],
+            // preprocess matching files before serving them to the browser
+            // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+            preprocessors: {
+                'src/**/*.js': ['coverage']
+            },
 
-        coverageReporter: {
-            dir: 'report/coverage',
-            reporters: [
-                // reporters not supporting the `file` property
-                { type: 'html', subdir: 'report-html' },
-                { type: 'lcov', subdir: 'report-lcov' },
+            // test results reporter to use
+            // possible values: 'dots', 'progress', 'coverage'
+            // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+            reporters: ['progress', 'coverage'],
 
-                // reporters supporting the `file` property, use `subdir` to directly
-                // output them in the `dir` directory.
-                // omit `file` to output to the console.
-                // {type: 'cobertura', subdir: '.', file: 'cobertura.txt'},
-                // {type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt'},
-                // {type: 'teamcity', subdir: '.', file: 'teamcity.txt'},
-                // {type: 'text'}, subdir: '.', file: 'text.txt'},
+            coverageReporter: {
+                dir: 'report/coverage',
+                reporters: [
+                    // reporters not supporting the `file` property
+                    {type: 'html', subdir: 'report-html'},
+                    {type: 'lcov', subdir: 'report-lcov'},
 
-                { type: 'text-summary' } //, subdir: '.', file: 'text-summary.txt'}
-            ]
-        },
+                    // reporters supporting the `file` property, use `subdir` to directly
+                    // output them in the `dir` directory.
+                    // omit `file` to output to the console.
+                    // {type: 'cobertura', subdir: '.', file: 'cobertura.txt'},
+                    // {type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt'},
+                    // {type: 'teamcity', subdir: '.', file: 'teamcity.txt'},
+                    // {type: 'text'}, subdir: '.', file: 'text.txt'},
 
-        // web server port
-        port: 9876,
+                    {type: 'text-summary'} //, subdir: '.', file: 'text-summary.txt'}
+                ]
+            },
 
-        // enable / disable colors in the output (reporters and logs)
-        colors: true,
+            // web server port
+            port: 9876,
 
-        // level of logging
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR ||
-        // config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+            // enable / disable colors in the output (reporters and logs)
+            colors: true,
 
-        // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+            // level of logging
+            // possible values: config.LOG_DISABLE || config.LOG_ERROR ||
+            // config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+            logLevel: config.LOG_INFO,
 
-        // start these browsers
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        //        browsers: ['Chrome', 'ChromeCanary', 'FirefoxAurora', 'Safari', 'PhantomJS'],
-        browsers: [ 'PhantomJS' ],
+            // enable / disable watching file and executing tests whenever any file changes
+            autoWatch: true,
 
-        // Continuous Integration mode
-        // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false
-    });
+            // start these browsers
+            // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+            //        browsers: ['Chrome', 'ChromeCanary', 'FirefoxAurora', 'Safari', 'PhantomJS'],
+            browsers: ['Chrome'],
+
+            // Continuous Integration mode
+            // if true, Karma captures browsers, runs the tests and exits
+            singleRun: false
+        }
+    );
 };

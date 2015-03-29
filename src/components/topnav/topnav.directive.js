@@ -3,7 +3,7 @@
 
     angular
         .module('app.topnav')
-        .directive('atTopnav', topnavDirective);
+        .directive('tmplTopnav', topnavDirective);
 
 
     // ----- topnavDirective -----
