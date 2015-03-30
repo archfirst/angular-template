@@ -19,6 +19,9 @@
     function configure(
         $compileProvider, $logProvider, routerHelperProvider, exceptionHandlerProvider) {
 
+        // During development, you may want to set debugInfoEnabled to true. This is required for tools like
+        // Protractor, Batarang and ng-inspector to work correctly. However do not check in this change.
+        // This flag must be set to false in production for a significant performance boost.
         $compileProvider.debugInfoEnabled(false);
 
         // turn debugging off/on (no info or warn)
