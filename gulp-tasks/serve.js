@@ -1,6 +1,7 @@
 var browserSync = require('browser-sync');
 var gulp = require('gulp');
 var watch = require('gulp-watch');
+var modRewrite = require('connect-modrewrite');
 
 module.exports = function (config) {
 
@@ -100,7 +101,10 @@ module.exports = function (config) {
                     '/src': config.sourceDir,
                     '/images': config.sourceDir + 'images',
                     '/.tmp': config.tempDir
-                } : {}
+                } : {},
+                middleware: [
+                    modRewrite([ '!\\.\\w+$ /index.html [L]' ])
+                ]
             },
             port: config.port,
             ghostMode: {
