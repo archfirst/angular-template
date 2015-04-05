@@ -21,7 +21,6 @@ module.exports = function (config) {
                 'bower_components/angular-mocks/angular-mocks.js',
                 'bower_components/bardjs/dist/bard.js',
                 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-                'bower_components/d3/d3.js',
                 'bower_components/lodash/lodash.js',
 
                 'test/helpers/*.js',
