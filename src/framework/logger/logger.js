@@ -20,24 +20,24 @@
         return service;
         /////////////////////
 
-        function log(message, data /*, title*/) {
-            $log.log('log: ' + message, data);
+        function log(message) {
+            $log.log('log: ' + message);
         }
 
-        function info(message, data /*, title*/) {
-            $log.info('info: ' + message, data);
+        function info(message) {
+            $log.info('info: ' + message);
         }
 
-        function warn(message, data /*, title*/) {
-            $log.warn('warn: ' + message, data);
+        function warn(message) {
+            $log.warn('warn: ' + message);
         }
 
-        function error(message, data /*, title*/) {
-            $log.error('error: ' + message, data);
+        function error(message) {
+            $log.error('error: ' + message);
         }
 
-        function debug(message, data /*, title*/) {
-            $log.debug('debug: ' + message, data);
+        function debug(message) {
+            $log.debug('debug: ' + message);
         }
     }
 }());
