@@ -6,7 +6,7 @@
         'ngSanitize',
 
         // Our reusable framework
-        'fw.exception', 'fw.logger', 'fw.router',
+        'fw.exception', 'fw.logger',
 
         // 3rd Party modules
         'ui.router'
