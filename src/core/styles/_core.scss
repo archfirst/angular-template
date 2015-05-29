@@ -7,3 +7,6 @@ body {
 .navbar-fixed-top {
     border: 0;
 }
+
+/* Workaround for unwanted route changes due to empty href attributes - see http://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
