@@ -19,8 +19,10 @@
   },
   "dependencies": {
     "angular": "~1.4.0",
+    "angular-animate": "~1.4.0",
     "angular-bootstrap": "~0.13.0",
     "angular-sanitize": "~1.4.0",
+    "angular-toastr": "~1.4.1",
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass": "~3.3.4",
     "lodash": "~3.9.3"

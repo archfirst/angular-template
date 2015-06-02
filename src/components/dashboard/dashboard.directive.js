@@ -33,7 +33,7 @@
         activate();
 
         function activate() {
-            logger.info('Activated Dashboard View');
+            logger.log('Activated Dashboard View');
         }
     }
 

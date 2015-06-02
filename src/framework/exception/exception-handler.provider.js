@@ -40,17 +40,19 @@
         $provide.decorator('$exceptionHandler', extendExceptionHandler);
     }
 
-    extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
+    extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', '$injector'];
 
     /**
      * Extend the $exceptionHandler service to log via the logger service.
      * @param  {Object} $delegate
      * @param  {Object} exceptionHandler
-     * @param  {Object} logger
+     * @param  {Object} $injector
      * @return {Function} the decorated $exceptionHandler service
      */
-    function extendExceptionHandler($delegate, exceptionHandler, logger) {
+    function extendExceptionHandler($delegate, exceptionHandler, $injector) {
         return function(exception, cause) {
+            // Need to load logger at runtime to avoid circular dependency with toastr
+            var logger = $injector.get('logger');
             var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
             var errorData = {exception: exception, cause: cause};
             exception.message = appErrorPrefix + exception.message;
