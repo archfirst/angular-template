@@ -5,7 +5,7 @@
         // Common (everybody has access to these)
         'app.core',
 
-        // Features
+        // Features (listed alphabetically)
         'app.dashboard',
         'app.topnav'
     ]);
