@@ -6,7 +6,7 @@
         'app.core',
 
         // Features
-        'app.topnav',
-        'app.dashboard'
+        'app.dashboard',
+        'app.topnav'
     ]);
 })();
