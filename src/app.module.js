@@ -6,6 +6,7 @@
         'app.core',
 
         // Features (listed alphabetically)
+        'app.approot',
         'app.dashboard',
         'app.topnav'
     ]);
