@@ -1,5 +1,8 @@
 # Angular Template
-This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. It is heavily influenced by John Papa's [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide) and his [Gulp Patterns](https://github.com/johnpapa/gulp-patterns) project. I would like to take this opportunity to thank John for providing these excellent resources to make our jobs easier and more enjoyable.
+This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. See the following projects for sample usage in a realistic application:
+
+- [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
+- [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and Bookshelf best practices)
 
 ## Requirements
 
@@ -219,3 +222,6 @@ Below this level you will find various folders that arrange the application's fu
 - `gulp serve-build --debug-brk`
 
     Launch debugger and break on 1st line with node-inspector.
+
+## Credits
+This template is heavily influenced by John Papa's [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide) and his [Gulp Patterns](https://github.com/johnpapa/gulp-patterns) project. I would like to take this opportunity to thank John for providing these excellent resources to make our jobs easier and more enjoyable.
