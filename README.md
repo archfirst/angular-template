@@ -11,7 +11,7 @@ This template provides a starter project that implements best practices in codin
 
 Check out the following projects to see how this template can be used to build real applications:
 - [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
-- [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and Bookshelf best practices)
+- [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and DDD best practices)
 
 ## Requirements
 
