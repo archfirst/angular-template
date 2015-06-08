@@ -1,6 +1,15 @@
 # Angular Template
-This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. See the following projects for sample usage in a realistic application:
+This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. Features include:
+- A well-organized component hierarchy starting from `approot`. Components are implemented using directives (no dangling controllers). This provides a good architectural direction until Angular 2.0 becomes available.
+- Follows AngularJS style guidelines (e.g. `controller as` syntax).
+- Uses [AngularUI Router](https://github.com/angular-ui/ui-router) for flexible routing and nested views.
+- Uses [Angular Bootstrap](http://angular-ui.github.io/bootstrap/) to remove dependencies on jQuery and Bootstrap’s JavaScript.
+- Provides logging and exception handling frameworks with toaster notifications.
+- Provides a Gulp based build system – code changes are reflected in the browser immediately.
+- Uses Karma, Mocha and Chai for testing.
+- Allows front-end development to proceed independently of the back-end by providing a mock server to serve an API and the sample data.
 
+Check out the following projects to see how this template can be used to build real applications:
 - [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
 - [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and Bookshelf best practices)
 
