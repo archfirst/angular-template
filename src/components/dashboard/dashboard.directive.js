@@ -3,15 +3,15 @@
     'use strict';
 
     angular.module('app.dashboard')
-        .directive('tmplDashboard', dashboardDirective)
-        .controller('DashboardController', DashboardController);
+        .directive('tmplDashboard', directiveFunction)
+        .controller('DashboardController', ControllerFunction);
 
 
-    // ----- dashboardDirective -----
-    dashboardDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function dashboardDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
@@ -24,11 +24,11 @@
     }
 
 
-    // ----- DashboardController -----
-    DashboardController.$inject = ['logger'];
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = ['logger'];
 
     /* @ngInject */
-    function DashboardController(logger) {
+    function ControllerFunction(logger) {
 
         activate();
 

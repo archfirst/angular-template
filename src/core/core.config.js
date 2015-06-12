@@ -12,13 +12,13 @@
     core.value('config', config);
 
     // Configure the app
-    core.config(configure);
+    core.config(configFunction);
 
-    configure.$inject =
+    configFunction.$inject =
         ['$compileProvider', '$logProvider', 'exceptionHandlerProvider'];
 
     /* @ngInject */
-    function configure(
+    function configFunction(
         $compileProvider, $logProvider, exceptionHandlerProvider) {
 
         // During development, you may want to set debugInfoEnabled to true. This is required for tools like

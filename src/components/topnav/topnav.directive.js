@@ -3,15 +3,15 @@
 
     angular
         .module('app.topnav')
-        .directive('tmplTopnav', topnavDirective)
-        .controller('TopnavController', TopnavController);
+        .directive('tmplTopnav', directiveFunction)
+        .controller('TopnavController', ControllerFunction);
 
 
-    // ----- topnavDirective -----
-    topnavDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function topnavDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
@@ -23,11 +23,11 @@
         return directive;
     }
 
-    // ----- TopnavController -----
-    TopnavController.$inject = [];
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = [];
 
     /* @ngInject */
-    function TopnavController() {
+    function ControllerFunction() {
         var vm = this;
         vm.isCollapsed = true;
     }

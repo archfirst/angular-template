@@ -3,11 +3,11 @@
     'use strict';
 
     angular.module('app.approot')
-        .directive('tmplApproot', approotDirective);
+        .directive('tmplApproot', directiveFunction);
 
 
-    // ----- approotDirective -----
-    function approotDirective() {
+    // ----- directiveFunction -----
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
