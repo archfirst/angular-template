@@ -16,6 +16,8 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'components/topnav/topnav.html',
+            scope: {
+            },
             controller: 'TopnavController',
             controllerAs: 'vm'
         };

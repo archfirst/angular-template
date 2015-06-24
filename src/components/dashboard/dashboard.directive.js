@@ -16,6 +16,8 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'components/dashboard/dashboard.html',
+            scope: {
+            },
             controller: 'DashboardController',
             controllerAs: 'vm'
         };

@@ -11,7 +11,9 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'components/approot/approot.html'
+            templateUrl: 'components/approot/approot.html',
+            scope: {
+            }
         };
 
         return directive;
