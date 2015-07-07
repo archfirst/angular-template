@@ -13,6 +13,8 @@ Check out the following projects to see how this template can be used to build r
 - [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
 - [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and DDD best practices)
 
+Also visit the [wiki](https://github.com/archfirst/angular-template/wiki) where you will find recipes to extend the template to a full-fledged app.
+
 ## Requirements
 
 - Install Node
