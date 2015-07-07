@@ -12,6 +12,7 @@
         var service = {
             log     : log,
             info    : info,
+            success : success,
             warn    : warn,
             error   : error,
             debug   : debug
@@ -27,6 +28,11 @@
         function info(message) {
             toastr.info(message, 'Information');
             $log.info('info: ' + message);
+        }
+
+        function success(message) {
+            toastr.success(message, 'Success');
+            $log.info('success: ' + message);
         }
 
         function warn(message) {
