@@ -9,11 +9,12 @@ This template provides a starter project that implements best practices in codin
 - Uses Karma, Mocha and Chai for testing.
 - Allows front-end development to proceed independently of the back-end by providing a mock server to serve an API and the sample data.
 
+### Further Reading
+Visit our [wiki](https://github.com/archfirst/angular-template/wiki) for detailed concepts and useful recipes for extending the template.
+
 Check out the following projects to see how this template can be used to build real applications:
 - [Manage My Money Client](https://github.com/archfirst/manage-my-money-client) (AngularJS best practices)
 - [Manage My Money Server](https://github.com/archfirst/manage-my-money-server) (Node.js, REST and DDD best practices)
-
-Also visit the [wiki](https://github.com/archfirst/angular-template/wiki) where you will find recipes to extend the template to a full-fledged app.
 
 ## Requirements
 
