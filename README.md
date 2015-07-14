@@ -81,7 +81,7 @@ The folder structure is somewhat simplified and flatter compared to John Papa's 
     /index.html
 ```
 
-The `src` folder contains only the source for the AngularJS client application. It treats all 3 web technologies (HTML, CSS and JavaScript) as a first class citizens and arranges them into logical modules. At the highest level you will find the main html, css (well scss) and js files:
+The `src` folder contains only the source for the AngularJS client application. It treats all 3 web technologies (HTML, CSS and JavaScript) as first class citizens and arranges them into logical modules. At the highest level you will find the main html, css (well, scss) and js files:
 
 - `index.html`
 - `app.scss`
