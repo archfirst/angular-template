@@ -1,0 +1,6 @@
+{
+    "extends": "../.jshintrc",
+
+    // Node.js
+    "node": true
+}

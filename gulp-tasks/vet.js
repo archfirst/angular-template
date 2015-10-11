@@ -1,3 +1,7 @@
+/* jshint -W024 */
+
+'use strict';
+
 var gulp = require('gulp');
 
 module.exports = function (config) {
@@ -16,7 +20,8 @@ module.exports = function (config) {
             .src([
                 config.sourceDir + '**/*.js',
                 config.testDir + '**/*.js',
-                './*.js'
+                './*.js',
+                './gulp-tasks/*.js'
             ])
             .pipe(config.$.if(config.args.verbose, config.$.print()))
             .pipe(config.$.jshint())

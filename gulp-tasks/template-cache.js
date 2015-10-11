@@ -1,3 +1,7 @@
+/* jshint -W024 */
+
+'use strict';
+
 var gulp = require('gulp');
 
 module.exports = function (config) {

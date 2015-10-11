@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var del = require('del');
 
@@ -17,9 +19,9 @@ module.exports = function (config) {
         var assets = $.useref.assets({ searchPath: './' });
 
         // Filters are named for the gulp-useref path
-        var cssFilter = $.filter('**/*.css');
-        var jsAppFilter = $.filter('**/app.js');
-        var jslibFilter = $.filter('**/lib.js');
+        var cssFilter = $.filter('**/*.css', {restore: true});
+        var jsAppFilter = $.filter('**/app.js', {restore: true});
+        var jslibFilter = $.filter('**/lib.js', {restore: true});
 
         return gulp
             .src(config.tempDir + 'index.html')
@@ -28,17 +30,17 @@ module.exports = function (config) {
             // Get the css
             .pipe(cssFilter)
             .pipe($.csso())
-            .pipe(cssFilter.restore())
+            .pipe(cssFilter.restore)
             // Get the custom javascript
             .pipe(jsAppFilter)
             .pipe($.ngAnnotate({ add: true }))
             .pipe($.uglify())
             .pipe(getHeader())
-            .pipe(jsAppFilter.restore())
+            .pipe(jsAppFilter.restore)
             // Get the vendor javascript
             .pipe(jslibFilter)
             .pipe($.uglify())
-            .pipe(jslibFilter.restore())
+            .pipe(jslibFilter.restore)
             // Take inventory of the file names for future rev numbers
             .pipe($.rev())
             // Apply the concat and file replacement with useref

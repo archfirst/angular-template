@@ -1,3 +1,5 @@
+'use strict';
+
 var plato = require('plato');
 var glob = require('glob');
 var gulp = require('gulp');

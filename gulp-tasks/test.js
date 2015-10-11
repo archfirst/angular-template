@@ -1,8 +1,9 @@
+'use strict';
+
 var gulp = require('gulp');
 
 module.exports = function (config) {
-    var log = config.log,
-        args = config.args;
+    var log = config.log;
 
     gulp.task('test', [ 'vet', 'templatecache' ], function (done) {
         startTests(true /*singleRun*/, done);
@@ -16,27 +17,19 @@ module.exports = function (config) {
     function startTests(singleRun, done) {
         var child;
         var excludeFiles = [];
-        var fork = require('child_process').fork;
-        var karma = require('karma').server;
+        var Server = require('karma').Server;
         var serverSpecs = [config.testDir + 'server-integration/**/*.spec.js'];
 
-        if (args.startServers) {
-            log('Starting servers');
-            var savedEnv = process.env;
-            savedEnv.NODE_ENV = 'dev';
-            savedEnv.PORT = 3000;
-            child = fork('../mock-server/app.js');
-        } else {
-            if (serverSpecs && serverSpecs.length) {
-                excludeFiles = serverSpecs;
-            }
+        if (serverSpecs && serverSpecs.length) {
+            excludeFiles = serverSpecs;
         }
 
-        karma.start({
+        var server = new Server({
             configFile: __dirname + '/../karma.conf.js',
             exclude: excludeFiles,
             singleRun: !!singleRun
         }, karmaCompleted);
+        server.start();
 
         ////////////////
 
@@ -55,4 +48,3 @@ module.exports = function (config) {
     }
 
 };
-

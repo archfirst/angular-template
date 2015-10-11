@@ -12,9 +12,6 @@ module.exports = {
     testDir: './test/',
     buildDir: './build/',
     tempDir: './.tmp/',
-    proxyPort: 7203,
-    port: 3000,
-    browserReloadDelay: 1000,
     js: [
         // module files in desired order
         src + '**/*.module.js',
